@@ -1,0 +1,27 @@
+extends ../_tmpl/base
+
+block param
+	- var siteTitle = "ダミータイトル";
+	- var description = "ダミータイトル";
+	- var keywords = "ダミータイトル";
+	- var pageTitle = "ダミータイトル";
+	- var bodyID = "BodyID";
+
+prepend container
+	.breadcrumb
+		.wrap
+			ul
+				li: a(href="/") HOME
+				li: a(href="/xxx/xxx/") xxx
+				li #{pageTitle}
+
+prepend contents
+	h2.headline.headline--01 #{pageTitle}
+
+	picture
+		source(type="image/webp" srcset="/assets/img/common/visual_img@sp.webp" media="(max-width: 767px)")
+		source(srcset="/assets/img/common/visual_img@sp.jpg" media="(max-width: 767px)")
+		source(type="image/webp" srcset="/assets/img/common/visual_img.webp")
+		img.lazy(src="/assets/img/common/visual_img.jpg" alt="")
+
+prepend side

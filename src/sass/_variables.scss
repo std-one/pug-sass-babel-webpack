@@ -1,0 +1,67 @@
+//
+// Variables
+//
+
+// width
+// -------------------------
+// Number
+$base_number_view: 1600;
+$base_number: 1240;
+// $base_number_tb: 1024;
+$base_number_sp: 375;
+
+// Base
+$base_width_view: $base_number_view + px;
+$base_width: $base_number + px;
+// $base_width_tb: $base_number_tb + px;
+// $base_width_sp: $base_number_sp + px;
+
+// Media Queries
+$point_view: $base_width_view;
+$point_pc: $base_width;
+// $point_tb: $base_width_tb;
+$point_sp: 767px;
+$point_min: 374px;
+
+// font
+// -------------------------
+$font_base: 'Lucida Grande', '游ゴシック', 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', Meiryo, メイリオ, sans-serif;
+// $font_base: 'Noto Sans JP', 'Lucida Grande', '游ゴシック', 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', Meiryo, メイリオ, sans-serif;
+// $font_base: 'Roboto', 'Lucida Grande', '游ゴシック', 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', Meiryo, メイリオ, sans-serif;
+// $font_sp: sans-serif;
+
+// color
+// -------------------------
+$color_main: #333;
+// $color_sub_light: #333;
+// $color_sub_dark: #333;
+// $color_accent_light: #333;
+// $color_accent_medium: #333;
+// $color_accent_dark: #333;
+
+// link color
+// -------------------------
+$link_color: #00e;
+// $link_color_visited: #00e;
+$link_color_hover: #00e;
+// $link_color_active: #f00;
+
+// ground color
+// -------------------------
+$ground_color: #333;
+// $ground_color_light: #e3faf8;
+// $ground_color_gray_light: #f6f6f6;
+// $ground_color_gray_medium: #eee;
+
+// text color
+// -------------------------
+$text_color_main: #333;
+// $text_color_headline: #333;
+
+// btn color
+// -------------------------
+$btn_color_base: #333;
+
+// rollover value
+// -------------------------
+$opacity_value: .7;

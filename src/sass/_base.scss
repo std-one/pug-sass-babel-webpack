@@ -1,0 +1,221 @@
+//
+// Base
+//
+
+/* --------------------------------------------------
+ 02: Base Style
+ -------------------------------------------------- */
+// @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700|Roboto:400,700&display=swap');
+
+html {
+	font-size: 62.5%;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body {
+	margin: 0 auto;
+	background-color: #eee;
+	color: #333;
+	font-family: $font_base;
+	font-size: 1.4rem;
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+	&.is-fixed {
+		position: fixed;
+		width: 100%;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+	transition: .3s;
+	// &[src*="@sp."] {
+	// 	display: none;
+	// }
+	// @media only screen and (max-width: $point_sp) {
+	// 	&[src*="@pc."] {
+	// 		display: none;
+	// 	}
+	// 	&[src*="@sp."] {
+	// 		display: inline;
+	// 	}
+	// }
+}
+
+/* display */
+.display-pc {}
+@media only screen and (max-width: $point_sp) {
+	.display-pc {
+		display: none !important;
+	}
+}
+.display-sp { display: none;}
+@media only screen and (max-width: $point_sp) {
+	.display-sp {
+		display: block !important;
+	}
+}
+
+// /* 標準 */
+// :placeholder-shown { color: #000;}
+// ::-webkit-input-placeholder { color: #000;}
+// ::-moz-placeholder { color: #000; opacity: 1;}
+// :-ms-input-placeholder { color: #000;}
+
+// /* フォーカス時 */
+// :focus:placeholder-shown { color: transparent;}
+// :focus::-webkit-input-placeholder { color: transparent;}
+// :focus::-moz-placeholder { color: transparent; opacity: 1;}
+// :focus:-ms-input-placeholder { color: transparent;}
+
+
+/* --------------------------------------------------
+ 03: Animation
+ -------------------------------------------------- */
+/* fadeIn */
+@keyframes fadeIn {
+	0% { visibility: hidden; opacity: 0;}
+	100% { opacity: 1;}
+}
+
+
+/* --------------------------------------------------
+ 04: Link Style
+ -------------------------------------------------- */
+a {
+	color: $link_color;
+	text-decoration: underline;
+	transition: .3s;
+	&:hover {
+		color: $link_color_hover;
+		text-decoration: none;
+	}
+}
+
+
+/* --------------------------------------------------
+ 05: Wrapper Style
+ -------------------------------------------------- */
+.wrap {
+	box-sizing: content-box;
+	max-width: $base_width;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+
+/* --------------------------------------------------
+ 06: Header Style
+ -------------------------------------------------- */
+.header {
+	overflow: hidden;
+	margin: 0;
+	padding: 0 10px;
+	background-color: #fff;
+}
+
+/* nav-global */
+.nav-global {
+	margin: 0 0 10px;
+	ul {
+		text-align: center;
+	}
+	li {
+		display: inline-block;
+		margin: 0 1.0em;
+	}
+}
+
+/* nav-utility */
+.nav-utility {
+	margin: 0 0 5px;
+	ul {
+		text-align: right;
+	}
+	li {
+		display: inline-block;
+		margin: 0 1.0em;
+		font-size: 12px;
+	}
+}
+
+/* breadcrumb */
+.breadcrumb {
+	line-height: 1.1;
+	font-size: 86%;
+	a {
+		color: #f00;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+/* --------------------------------------------------
+ 07: Contents Style
+-------------------------------------------------- */
+main {
+	overflow: hidden;
+	background-color: #ddd;
+}
+
+.contents {
+	float: right;
+	width: 700px;
+}
+
+.side {
+	float: left;
+	width: 240px;
+}
+
+/* nav-local  */
+.nav-local {}
+
+
+/* --------------------------------------------------
+ 08: Footer Style
+ -------------------------------------------------- */
+.footer {
+	margin: 0 auto;
+	padding: 5px 10px;
+	background-color: #fcc;
+}
+
+/* nav-footer */
+.nav-footer {
+	margin: 0 0 10px;
+	ul {
+		text-align: center;
+	}
+	li {
+		display: inline-block;
+		margin: 0 1.0em;
+	}
+}
+
+/* nav-footer-utility */
+.nav-footer-utility {
+	margin: 0 0 5px;
+	ul {}
+	li {
+		display: inline-block;
+		margin: 0 1.0em;
+		font-size: 12px;
+	}
+}
+
+/* copyright */
+.copyright {
+	padding: 5px 0;
+	background-color: #ccc;
+	font-size: 12px;
+	text-align: center;
+}
