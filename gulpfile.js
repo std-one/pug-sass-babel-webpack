@@ -39,7 +39,6 @@ gulp.task('sass', () => {
 		.pipe($.sass().on('error', $.sass.logError))
 		.pipe($.sass({outputStyle: 'expanded'}))
 		.pipe($.autoprefixer({
-			browsers: ['last 2 versions', 'ie >= 11', 'Android >= 4.4'],
 			cascade: false,
 			grid: true
 		}))
@@ -59,12 +58,9 @@ gulp.task('image', () => {
 				mozjpeg({
 					quality: 80
 				}),
-				pngquant({
-					quality: [.7, .8],
-					speed: 1
-				})
+				pngquant()
 			])
-    )
+		)
 		.pipe(gulp.dest(paths.public + '/assets/img'));
 });
 
@@ -95,25 +91,25 @@ gulp.task('html-reload', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch(['src/pug/**/*.pug'], gulp.task('pug'));
-  gulp.watch(['src/sass/**/*.scss'], gulp.task('sass'));
+	gulp.watch(['src/pug/**/*.pug'], gulp.task('pug'));
+	gulp.watch(['src/sass/**/*.scss'], gulp.task('sass'));
 	gulp.watch(['src/img/**/*'], gulp.task('image'));
 	gulp.watch(['src/img/**/*'], gulp.task('webp'));
-  gulp.watch(['src/js/**/*.js'], gulp.task('bundle'));
+	gulp.watch(['src/js/**/*.js'], gulp.task('bundle'));
 	gulp.watch('*html', gulp.task('html-reload'));
 });
 
 gulp.task(
-  'build',
-  gulp.series(
-    gulp.parallel(
-      'pug',
-      'sass',
-      'image',
-      'webp',
-      'bundle',
-    ),
-  ),
+	'build',
+	gulp.series(
+		gulp.parallel(
+			'pug',
+			'sass',
+			'image',
+			'webp',
+			'bundle',
+		),
+	),
 );
 
 gulp.task('default', gulp.series(gulp.parallel('server', 'watch')));

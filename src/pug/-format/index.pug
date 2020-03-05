@@ -19,9 +19,9 @@ prepend contents
 	h2.headline.headline--01 #{pageTitle}
 
 	picture
-		source(type="image/webp" srcset="/assets/img/common/visual_img@sp.webp" media="(max-width: 767px)")
-		source(srcset="/assets/img/common/visual_img@sp.jpg" media="(max-width: 767px)")
-		source(type="image/webp" srcset="/assets/img/common/visual_img.webp")
-		img.lazy(src="/assets/img/common/visual_img.jpg" alt="")
+		source(type="image/webp" data-srcset="/assets/img/common/visual_img@sp.webp" media="(max-width: 767px)")
+		source(data-srcset="/assets/img/common/visual_img@sp.jpg" media="(max-width: 767px)")
+		source(type="image/webp" data-srcset="/assets/img/common/visual_img.webp")
+		img.lazyload(src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7" data-src="/assets/img/common/visual_img.jpg" data-aspectratio="1600/800" alt="")
 
 prepend side

@@ -15,41 +15,41 @@ module.exports = {
 	// 'production' | 'development' | 'none'
 	mode: 'development',
 
-  entry: './src/js/script.js',
+	entry: './src/js/script.js',
 
-  output: {
-    filename: 'bundle.js',
+	output: {
+		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'public/assets/js'),
-  },
+	},
 
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                '@babel/preset-env'
-              ]
-            }
-          }
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
-      },
-    ]
-  },
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							presets: [
+								'@babel/preset-env'
+							]
+						}
+					}
+				]
+			},
+			{
+				test: /\.css$/,
+				use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+			},
+		]
+	},
 
-  devtool: 'source-map',
+	devtool: 'source-map',
 
-  plugins: [
-    new UglifyJSPlugin({
-      sourceMap: true,
-    }),
-  ],
+	plugins: [
+		new UglifyJSPlugin({
+			sourceMap: true,
+		}),
+	],
 };

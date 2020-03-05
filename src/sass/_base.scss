@@ -45,18 +45,16 @@ img {
 	// }
 }
 
-/* display */
-.display-pc {}
-@media only screen and (max-width: $point_sp) {
-	.display-pc {
-		display: none !important;
-	}
+/* lazyload */
+.lazyload,
+.lazyloading {
+	opacity: 0;
+	visibility: hidden;
 }
-.display-sp { display: none;}
-@media only screen and (max-width: $point_sp) {
-	.display-sp {
-		display: block !important;
-	}
+
+.lazyloaded {
+	opacity: 1;
+	visibility: visible;
 }
 
 // /* 標準 */
