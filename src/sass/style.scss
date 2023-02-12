@@ -14,9 +14,8 @@
 ------------------------------
 ##################################################*/
 
-@import 'variables';
-@import 'reset';
-@import 'utility';
-@import 'base';
-@import 'component';
-@import 'project';
+@use 'reset';
+@use 'utility';
+@use 'base';
+@use 'component';
+@use 'project';

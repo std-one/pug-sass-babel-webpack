@@ -1,27 +1,12 @@
 extends ../_tmpl/base
 
 block param
-	- var siteTitle = "ダミータイトル";
-	- var description = "ダミータイトル";
-	- var keywords = "ダミータイトル";
+	- var siteTitle = "町田れいじ Official Website";
+	- var description = "喜ぶ人と共に喜び、泣く人と共に泣く「町田零二」（1980年生まれ・無所属）が大和市政に新しいスタイルを提案します！";
+	- var keywords = "町田れいじ,町田零二,大和市,政治,市議会議員";
 	- var pageTitle = "ダミータイトル";
-	- var bodyID = "BodyID";
+	- var url = "";
+	- var bodyID = "";
 
-prepend container
-	.breadcrumb
-		.wrap
-			ul
-				li: a(href="/") HOME
-				li: a(href="/xxx/xxx/") xxx
-				li #{pageTitle}
-
-prepend contents
-	h2.headline.headline--01 #{pageTitle}
-
-	picture
-		source(type="image/webp" data-srcset="/assets/img/common/visual_img@sp.webp" media="(max-width: 767px)")
-		source(data-srcset="/assets/img/common/visual_img@sp.jpg" media="(max-width: 767px)")
-		source(type="image/webp" data-srcset="/assets/img/common/visual_img.webp")
-		img.lazyload(src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7" data-src="/assets/img/common/visual_img.jpg" data-aspectratio="1600/800" alt="")
-
-prepend side
+block contents
+	h2.c-headline.-primary #{pageTitle}

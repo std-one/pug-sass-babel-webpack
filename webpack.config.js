@@ -1,19 +1,8 @@
-const webpack = require('webpack');
 const path = require('path');
-
-/*
- * We've enabled UglifyJSPlugin for you! This minifies your app
- * in order to load faster and run less javascript.
- *
- * https://github.com/webpack-contrib/uglifyjs-webpack-plugin
- *
- */
-
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	// 'production' | 'development' | 'none'
-	mode: 'development',
+	mode: 'production',
 
 	entry: './src/js/script.js',
 
@@ -25,31 +14,12 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				use: [
-					{
-						loader: 'babel-loader',
-						options: {
-							presets: [
-								'@babel/preset-env'
-							]
-						}
-					}
-				]
-			},
-			{
 				test: /\.css$/,
 				use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
 			},
 		]
 	},
 
-	devtool: 'source-map',
-
-	plugins: [
-		new UglifyJSPlugin({
-			sourceMap: true,
-		}),
-	],
+	devtool: false,
+  target: ['web', 'es5'],
 };

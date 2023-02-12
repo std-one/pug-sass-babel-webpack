@@ -1,11 +1,314 @@
 extends _tmpl/base
 
 block param
-	- var siteTitle = "ダミータイトル";
-	- var description = "ダミータイトル";
-	- var keywords = "ダミータイトル";
-	- var bodyID = "BodyID";
-
-prepend container
+	- var siteTitle = "町田れいじ Official Website";
+	- var description = "喜ぶ人と共に喜び、泣く人と共に泣く「町田零二」（1980年生まれ・無所属）が大和市政に新しいスタイルを提案します！";
+	- var keywords = "町田れいじ,町田零二,大和市,政治,市議会議員";
+	- var bodyID = "";
 
 block contents
+	.p-visual
+		.p-visual__slide.swiper.js-carousel
+			.swiper-wrapper
+				.swiper-slide(data-swiper-autoplay="2000")
+					img(src="/assets/img/top/visual_img_01.jpg" alt="" width="240" height="192")
+					img(src="/assets/img/top/visual_img_02.jpg" alt="" width="400" height="320")
+				.swiper-slide
+					img(src="/assets/img/top/visual_img_03.jpg" alt="" width="400" height="320")
+					img(src="/assets/img/top/visual_img_04.jpg" alt="" width="240" height="192")
+				.swiper-slide
+					img(src="/assets/img/top/visual_img_05.jpg" alt="" width="240" height="192")
+					img(src="/assets/img/top/visual_img_06.jpg" alt="" width="400" height="320")
+				.swiper-slide
+					img(src="/assets/img/top/visual_img_07.jpg" alt="" width="400" height="320")
+					img(src="/assets/img/top/visual_img_08.jpg" alt="" width="240" height="192")
+
+		.l-wrap.-wide
+			.p-visual__contents
+				h2.p-visual__headline
+					span 大和市議会議員
+					| 町田れいじ
+				.p-visual__copy: img(src="/assets/img/top/visual_copy.png" alt="いっしょに生きよう　明るいみらい。" width="480" height="247" loading="lazy")
+
+	.p-area-profile
+		.l-wrap.-wide
+			.p-area-profile__unit
+				.p-area-profile__contents(data-scroll)
+					.p-area-profile__text
+						p こどもたちは私たちの希望であり、未来です。全国で少子高齢化が進む中、大和市でも2018年以降は年間の死亡数が出生数を上回っており、その差は年々拡大しています。それでも現在は社会増（転出者より転入者の方が多いこと）によって人口は増えていますが、地価の維持や税収の確保の面から、これからも「選ばれるまち」であり続けることが重要です。私はこれまで、専門である「こども政策」（子育て支援・こども支援・教育改革）に一貫して取り組んできましたが、こどもを産み育てやすいまちづくりは市民サービスの面からはもちろんのこと、選ばれるまちの要素としても、地域経済の循環のためにも、必要不可欠なものとなりました。
+						p しかしその一方で、私が政治を志すきっかけとなった児童虐待の防止や自殺対策についてはまだまだ道半ばです。高齢者福祉や安全・安心なまちづくりなど継続して取り組むべき政策分野も多くあります。この街を造り、私たちを育ててくれた親世代や地域の高齢者をお荷物扱いせず、全ての市民が世代や性別、国籍や文化、しょうがいの有無にかかわらず、互いに助け合って生きていける社会を実現するため、これからも一意専心に努めて参ります。
+						p 一人でみる夢はただの夢。でも、みんなで見れば夢はきっと現実になります。正直者が損をしない。努力がちゃんと報われる。そして誰しもが「明日はきっと明るい日になる」と信じて前を向ける社会。そんな社会の実現のために、みなさまの思いを町田れいじに託してください。
+						p.-copy いっしょに生きよう、明るいみらい！
+				.p-area-profile__profile
+					.p-area-profile__group(data-scroll)
+						.p-area-profile__image: img(src="/assets/img/top/area-profile_img.jpg" alt="" width="240" height="240" loading="lazy")
+						h2.p-area-profile__name
+							| 町田れいじ
+							span Reiji Machida
+					dl#profile.p-area-profile__list(data-scroll)
+						div
+							dt 1980年
+							dd 4月24日　神奈川県大和市で誕生。О型/おうし座
+						div
+							dt 1987年
+							dd 大和市立若草保育園卒園
+						div
+							dt 1993年
+							dd
+								| 大和市立西鶴間小学校卒業
+								br
+								| （学童保育わんぱくクラブに6年間在籍）
+						div
+							dt 1999年
+							dd 大和市立南林間中学校卒業
+						div
+							dt 2003年
+							dd Cambridge High School (New Zealand)卒業
+						div
+							dt 2004年
+							dd 武蔵大学社会学部社会学科卒業（社会学）
+						div
+							dt 2006年
+							dd
+								| 共立基督教研究所（現 東京基督教大学）
+								br
+								| 専門研修課程修了（人文学修士）
+								br
+								| 学校法人高座学園高座みどり幼稚園　入職
+						div
+							dt 2010年
+							dd 学校法人高座学園高座みどり幼稚園　退職
+						div
+							dt 2011年
+							dd 大和市議会議員選挙で初当選（2,290票）
+						div
+							dt 2015年
+							dd 大和市議会議員選挙で 2 期目の当選（2,559票）
+						div
+							dt 2019年
+							dd 大和市議会議員選挙で 3 期目の当選（2,740票）
+						div.-other
+							dt 【議会内の役職】
+							dd 大和市監査委員、議会運営委員会委員長、厚生常任委員会委員長、広報委員会委員長
+							dt 【その他の役職】
+							dd 公益財団法人横浜YMCA常議員、南林間連合自治会相談役、ボーイスカウト県央地区委員
+						div.-other
+							dt 【ライフワーク】
+							dd ボーイスカウト活動・YMCA
+							dt 【趣味】
+							dd サッカー・歴史・ボウリング
+							dt 【好きな言葉】
+							dd 「喜ぶ者と共に喜び、泣く者と共に泣く」
+
+	#style.c-area-common.p-area-style
+		.l-wrap
+			.c-group-header(data-scroll)
+				p.c-group-header__tagline 「みらいにつながる確かな選択！」
+				h2.c-group-header__headline
+					| 政策
+					br
+					| 「やまとスタイル 2023」
+				p.c-group-header__text
+					| 超少子高齢・人口減少社会に備えた将来持続性のあるまちづくり。
+					br
+					| 人と人とのつながりが見直される時代だからこそ、一緒に生きれば未来が明るい。
+					br
+					| みんなが「ここにいたい」「ここにいてもいいんだ」と思える社会を実現する「やまとスタイル2023」
+
+			.p-area-style__unit
+
+				.p-area-style__item(data-scroll)
+					h4.p-area-style__headline 教育改革
+					p.p-area-style__lead 「未来を担うこどもたちが、将来良き社会人として自立できる教育をめざします」
+					p.p-area-style__text
+						| こどもたちの教育はすべての大人たちにとって最も重要な投資です。
+						br
+						| 一人ひとりがそれぞれの個性を尊重されると共に、親の経済力に左右されることなく、
+						br.u-display-pc
+						| 将来しっかりとした大人になるために必要な教育を推進します。
+					ul.p-area-style__list
+						li 時代を見据えた先進的教育の導入
+						li 学力・体力の向上
+						li 特別支援教育の充実
+						li 地域の青少年活動の支援
+
+				.p-area-style__item(data-scroll)
+					h4.p-area-style__headline 子育て支援
+					p.p-area-style__lead 「すべてのこどもたちの育ちを支え、親子が幸せに暮らせる政策を進めます」
+					p.p-area-style__text
+						| さまざまな家庭の事情に合わせ、大人とこどもが安心して暮らせる制度作りを進めます。
+						br
+						| また、こどもの健全な育ちを支えるため、保育の安全と質の向上や産前産後ケアの充実を図るほか、
+						br.u-display-pc
+						| 特別なニーズのあるこどもに対しては早期からの切れ目のない支援を行います。
+					ul.p-area-style__list
+						li 産前産後ケアの充実
+						li 保育所待機児童ゼロの継続
+						li 切れ目のない発達支援
+						li 家庭の事情に合わせた学習支援
+
+				.p-area-style__item(data-scroll)
+					h4.p-area-style__headline 高齢者福祉
+					p.p-area-style__lead 「健康で楽しく、安心して生活できるまちをめざします」
+					p.p-area-style__text
+						| 健康寿命の延伸と認知症予防の推進を図るほか、高齢者の生きがいと暮らしを守る政策を進めます。
+						br
+						| また、最期まで安心して暮らせるための政策を進めます。
+					ul.p-area-style__list
+						li 健康寿命の延伸
+						li おひとりさま政策の推進
+						li 生活支援体制の整備
+						li 居場所づくりと認知症予防
+
+				.p-area-style__item(data-scroll)
+					h4.p-area-style__headline まちづくり
+					p.p-area-style__lead 「まちの価値を高め、持続可能で元気なまちをめざします」
+					p.p-area-style__text
+						| 大和市の特色を内外に発信し、「選ばれるまち」となることで人口減少を抑え、
+						br.u-display-pc
+						| 地価の下落（資産減少）を防ぐとともに市税収入を確保します。
+						br
+						| また、子育て世代を増やすことで地域経済を活性化させ、賑わいのあるまちを目指します。
+					ul.p-area-style__list
+						li シティプロモーションの推進
+						li 地域コミュニティの再生支援
+						li 若者を増やす取り組み
+						li 多文化共生の推進
+
+				.p-area-style__item(data-scroll)
+					h4.p-area-style__headline 環境・防災
+					p.p-area-style__lead 「まちの環境を整え、市民の命を守ります」
+					p.p-area-style__text
+						| 大規模災害に備えて、減災力と復興力を高めます。
+						br
+						| また、都市化が進む中でも緑を確保すると共に、安全・安心なまちを目指します。
+					ul.p-area-style__list
+						li 小規模公園の整備・活用
+						li 災害時の情報把握と迅速な伝達
+						li 環境保全と防災に有効な土地利用の推進
+						li 建物緑化の推進
+
+				.p-area-style__item(data-scroll)
+					h4.p-area-style__headline 児童虐待防止
+					p.p-area-style__lead 「子どもたちの心と命を守ります」
+					p.p-area-style__text
+						| 近年、増え続けている児童虐待。
+						br
+						| 大和市内でも毎年多くの児童虐待が発生していますが、その実情はあまり知られていません。
+						br
+						| こどもたちを守るため、改定された児童福祉法に沿って関係機関の連携強化と社会的養育の整備を進めていきます。
+					ul.p-area-style__list
+						li 児童相談所との連携
+						li 学校や関係諸機関との連携強化
+						li ハイリスク家庭への支援強化
+						li ファミリーホームの設置
+
+				.p-area-style__item(data-scroll)
+					h4.p-area-style__headline 自殺ゼロ
+					p.p-area-style__lead 「自殺ゼロの町、やまとを目指します」
+					p.p-area-style__text
+						| 大和市の自殺者ゼロを目指して、予防啓発活動や予防教育を進めると共に、自殺に対するリスクが高い層への取り組みを強化します。
+					ul.p-area-style__list
+						li 予防啓発活動の推進
+						li 命を大切にする学校教育
+						li 民間を含む関係諸機関との連携
+						li ハイリスク層のケア
+
+			.c-nav-lower(data-scroll)
+				h3.c-nav-lower__headline 政策達成報告
+				ul
+					li: a(href="/style/2019.html")
+						| 3期目
+						span &nbsp;政策達成報告
+					li: a(href="/style/2015.html")
+						| 2期目
+						span &nbsp;政策達成報告
+					li: a(href="/style/2011.html")
+						| 1期目
+						span &nbsp;政策達成報告
+
+	#info.c-area-common.p-area-info
+		.l-wrap
+			.c-group-header(data-scroll)
+				h2.c-group-header__headline お知らせ
+
+			.p-area-info__contents(data-scroll)
+				.p-area-info__sns
+					.p-area-info__twitter
+						a.twitter-timeline(data-lang="ja" data-width="544" data-height="652" href="https://twitter.com/reiji0424?ref_src=twsrc%5Etfw") Tweets by reiji0424
+						script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
+
+					.p-area-info__blog: a.c-btn(href="https://ameblo.jp/crusadezero" target="_blank") 町田れいじ Official Blog
+
+	#contact.c-area-common.-bg.p-area-contact
+		.l-wrap
+			.c-group-header(data-scroll)
+				p.c-group-header__tagline
+					| 大和市政に挑戦する町田れいじに対する
+					br.u-display-sp
+					| ご意見・ご質問はこちら
+				h2.c-group-header__headline お問い合わせ
+				p.c-group-header__text
+					| 大和市政に挑戦する町田れいじに対するご意見・ご質問はメールにてお気軽にお寄せください。
+					br
+					| なお、多くのメールをいただいております関係上、お寄せいただいたご意見・ご質問全てに返信ができない場合もございます。
+					br
+					| あらかじめご了承ください。
+
+			.p-area-contact__btn(data-scroll): a.c-btn(href="mailto:machidareiji@gmail.com") machidareiji@gmail.com
+
+			.p-block-support(data-scroll)
+				h3.p-block-support__headline 町田れいじ応援ソング『いっしょに生きよう、明るいみらい。』PV
+
+				.p-block-support__movie(data-scroll)
+					iframe(width="800" height="450" src="https://www.youtube.com/embed/nhQXM7-ULbA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
+
+			.p-area-contact__list
+				.p-area-contact__item(data-scroll)
+					h3.p-area-contact__headline
+						| 「町田れいじを支える会」
+						br.u-display-sp
+						| 入会のお願い
+					p.p-area-contact__text 会費は無料です。氏名・ご住所をお送りいただくだけで、年に数回発行する「市政報告」を郵送/メールにてお届けいたします。
+
+					.p-unit-contact
+						.p-unit-contact__item(data-scroll)
+							h4.p-unit-contact__headline FAX
+							.p-unit-contact__contents
+								p.p-unit-contact__text
+									| FAXでお申し込みをしてくださる方は
+									br
+									| FAX専用番号：
+									b 046-273-4175
+									br.u-display-sp
+									| までお願いいたします。
+						.p-unit-contact__item(data-scroll data-scroll-delay="100")
+							h4.p-unit-contact__headline メール
+							.p-unit-contact__contents
+								p.p-unit-contact__text
+									| メールでお申し込みをしてくださる方は
+									br
+									a(href="mailto:machidareiji@gmail.com") machidareiji@gmail.com
+									| までお願いいたします。
+
+				.p-area-contact__item(data-scroll)
+					h3.p-area-contact__headline ご寄付のお願い
+					p.p-area-contact__text
+						| 町田れいじの政治活動にご賛同くださる方のご支援を心よりお待ち申し上げております。
+						br
+						| ※法律により日本国籍を有する方からしかご寄付を頂くことができませんのでご了承ください。
+
+					.p-unit-contact
+						.p-unit-contact__item
+							h4.p-unit-contact__headline 寄付の振込先
+							.p-unit-contact__contents
+								dl.p-unit-contact__list
+									div
+										dt 銀行名
+										dd きらぼし銀行　南林間支店
+									div
+										dt 口座番号
+										dd 普通口座　0799973
+									div
+										dt 口座名
+										dd マチダレイジヲササエルカイ　マチダレイジ

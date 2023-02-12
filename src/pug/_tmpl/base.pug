@@ -2,81 +2,79 @@ doctype html
 html(lang="ja")
 	head
 		meta(charset="UTF-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
 		meta(name="format-detection" content="telephone=no")
 
 		block param
 		meta(name="description" content=description)
 		meta(name="keywords" content=keywords)
 		if pageTitle
-			title #{pageTitle} | #{siteTitle}
+			title #{pageTitle}｜#{siteTitle}
+			meta(property="og:type" content="article")
+			meta(property="og:url" content="https://www.reiji.info/"+ url +"")
+			meta(property="og:title" content=""+ pageTitle +"｜"+ siteTitle +"")
+			meta(itemprop="name" content=""+ pageTitle +"｜"+ siteTitle +"")
 		else
 			title #{siteTitle}
+			meta(property="og:type" content="website")
+			meta(property="og:url" content="https://www.reiji.info/")
+			meta(property="og:title" content=siteTitle)
+			meta(itemprop="name" content=siteTitle)
 
-		meta(property="og:type" content="website")
-		meta(property="og:site_name" content="")
-		meta(property="og:title" content=siteTitle)
 		meta(property="og:description" content=description)
-		meta(property="og:url" content="")
 		meta(property="og:image" content="")
 		meta(property="og:locale" content="ja_JP")
-		meta(itemprop="name" content=siteTitle)
 		meta(itemprop="description" content=description)
 		meta(itemprop="image" content="")
 
-		link(rel="shortcut icon" href="/favicon.ico")
-		link(rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico")
-		link(rel="apple-touch-icon" href="/apple-touch-icon.png")
+		//- link(rel="shortcut icon" href="/favicon.ico")
+		//- link(rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico")
+		//- link(rel="apple-touch-icon" href="/apple-touch-icon.png")
 
+		link(rel="preconnect" href="https://fonts.googleapis.com")
+		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap")
 		link(rel="stylesheet" href="/assets/css/style.css")
-
 		block style
-		script(src="/assets/js/bundle.js" async)
 
+		script(src="/assets/js/bundle.js" defer)
 		block javascript
 
 	body(id=bodyID)
-		header.header
-			.wrap
-				if pageTitle
-					p.header__logo HTML5サイト制作用雛形【ver. No.2019.05.29】
-				else
-					h1.header__logo HTML5サイト制作用雛形【ver. No.2019.05.29】
+		header.l-header
+			if pageTitle
+				p.l-header__logo: a(href="/")
+					span 大和市議会議員
+					| 町田れいじ
+			else
+				h1.l-header__logo
+					span 大和市議会議員
+					| 町田れいじ
 
-				nav.nav-utility
-					ul
-						li: a(href="xxx") よくある質問
-						li: a(href="xxx") お問い合わせ
-						li: a(href="xxx") サイトマップ
+			button.l-nav-menu(type="button" aria-expanded="false" aria-controls="l-nav-global")
+				span Menu
+				span Close
 
-				nav.nav-global
-					ul
-						li: a(href="xxx") グローバルナビ
-						li: a(href="xxx") グローバルナビ
-						li: a(href="xxx") グローバルナビ
-						li: a(href="xxx") グローバルナビ
-						li: a(href="xxx") グローバルナビ
+			nav.l-nav-global(aria-hidden="true")
+				.l-nav-global__overlay(aria-expanded="true" aria-controls="l-nav-global")
+				.l-nav-global__contents
+					.l-nav-global__inner
+						ul.l-nav-global__list
+							li: a(href= pageTitle ? '/' : '#') トップ
+							li: a(href= pageTitle ? '/index.html#profile' : '#profile') プロフィール
+							li: a(href= pageTitle ? '/index.html#style' : '#style') 政策「やまとスタイル」
+							//- li: a(href= pageTitle ? '/index.html#support' : '#support') 応援してくださる方へ
+							li: a(href= pageTitle ? '/index.html#info' : '#info') お知らせ
+							li: a(href= pageTitle ? '/index.html#contact' : '#contact') お問い合わせ
 
-		main.main(role="main")
-			block container
-				.container
-					.wrap
-						block main-contents
-							article.contents
-								block contents
+						ul.l-nav-global__sns
+							li: a(href="https://ameblo.jp/crusadezero" target="_blank"): img(src="/assets/img/common/ic_sns_blog.svg" alt="Blog" width="40" height="40" loading="lazy")
+							li: a(href="https://twitter.com/reiji0424" target="_blank"): img(src="/assets/img/common/ic_sns_twitter.svg" alt="Twitter" width="40" height="40" loading="lazy")
 
-							.side
-								block side
+		main.l-main(role="main")
+			article.l-contents
+				block contents
 
-			p.pagetop.is-fixed: a(href="#") PAGETOP
-
-		footer.footer
-			.wrap
-				.nav-footer
-					ul
-						li: a(href="xxx") グローバルナビ
-						li: a(href="xxx") グローバルナビ
-						li: a(href="xxx") グローバルナビ
-						li: a(href="xxx") グローバルナビ
-
-			p.copyright: small Copyright (c) 2017 &nbsp;hogehoge All Rights Reserved.
+		footer.l-footer
+			.l-wrap
+				p.l-copyright: small Copyright (C) 2023 Machida Reiji All Rights Reserved.

@@ -20,11 +20,13 @@ cd {project}
 
 ### パッケージ(node_modules)をインストール（初回のみ）
 ```
-npm install
+npm i
 ```
 
 ### srcディレクトリ内を監視
 ```
+npm run start
+または
 yarn start
 ```
 - 通常作業はこちらになります。gulpが起動します。

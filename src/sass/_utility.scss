@@ -2,62 +2,73 @@
 // Utility
 //
 
+@use 'variables' as v;
+
 /* --------------------------------------------------
  01: Utility Style
- -------------------------------------------------- */
+-------------------------------------------------- */
 
-/* float */
-.fl { float: left !important;}
-.fr { float: right !important;}
+/* Float */
+.u-fl { float: left !important;}
+.u-fr { float: right !important;}
 
-/* align */
-.taL { text-align: left !important;}
-.taR { text-align: right !important;}
-.taC { text-align: center !important;}
+/* Align */
+.u-taL { text-align: left !important;}
+.u-taR { text-align: right !important;}
+.u-taC { text-align: center !important;}
 
 /* size */
-.txXS { font-size: 10px !important;}
-.txSS { font-size: 11px !important;}
-.txS { font-size: 12px !important;}
-.txM { font-size: 14px !important;}
-.txL { font-size: 16px !important;}
-.txLL { font-size: 18px !important;}
-.txXL { font-size: 20px !important;}
+.u-txXS { font-size: 10px !important;}
+.u-txSS { font-size: 11px !important;}
+.u-txS { font-size: 12px !important;}
+.u-txM { font-size: 14px !important;}
+.u-txL { font-size: 16px !important;}
+.u-txLL { font-size: 18px !important;}
+.u-txXL { font-size: 20px !important;}
+
+/* Width */
+@for $i from 3 through 100 {
+	.u-w#{$i * 5}px { width: 5px * $i !important; }
+}
+
+@for $i from 1 through 20 {
+	.u-w#{$i * 5}per { width: 5% * $i !important; }
+}
 
 /* Margin Padding */
-.noMargin { margin: 0 !important;}
-.noPadding { padding: 0 !important;}
+.u-noMargin { margin: 0 !important;}
+.u-noPadding { padding: 0 !important;}
 
 @for $i from 0 through 10 {
-	.mt#{$i * 5} { margin-top: 5px * $i !important; }
-	.mb#{$i * 5} { margin-bottom: 5px * $i !important; }
-	.pt#{$i * 5} { padding-top: 5px * $i !important; }
-	.pb#{$i * 5} { padding-bottom: 5px * $i !important; }
+	.u-mt#{$i * 5} { margin-top: 5px * $i !important; }
+	.u-mb#{$i * 5} { margin-bottom: 5px * $i !important; }
+	.u-pt#{$i * 5} { padding-top: 5px * $i !important; }
+	.u-pb#{$i * 5} { padding-bottom: 5px * $i !important; }
 }
 
 /* Clear */
-.clr {
+.u-clr {
 	clear: both;
 }
 
 // ClearFix
 %clearfix {
-	&:after {
+	&::after {
 		content: "";
 		display: block;
 		clear: both;
 	}
 }
 
-/* display */
-.display-pc {
-	@media only screen and (max-width: $point_sp) {
+/* Display */
+.u-display-pc {
+	@media only screen and (max-width: v.$point_sp) {
 		display: none;
 	}
 }
-.display-sp {
+.u-display-sp {
 	display: none;
-	@media only screen and (max-width: $point_sp) {
+	@media only screen and (max-width: v.$point_sp) {
 		display: block;
 	}
 }
