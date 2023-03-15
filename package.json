@@ -29,7 +29,7 @@
 		"slick-carousel": "^1.8.1",
 		"style-loader": "^0.23.1",
 		"swiper": "^7.3.1",
-		"webpack": "^5.64.4",
+		"webpack": "^5.76.0",
 		"webpack-cli": "^4.9.1",
 		"webpack-stream": "^7.0.0"
 	},
