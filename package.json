@@ -6,7 +6,7 @@
 		"start": "gulp clean && gulp build && gulp"
 	},
 	"devDependencies": {
-		"browser-sync": "^2.26.14",
+		"browser-sync": "^2.29.0",
 		"css-loader": "^2.1.1",
 		"del": "^5.1.0",
 		"fibers": "^5.0.0",
