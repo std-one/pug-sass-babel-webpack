@@ -1,27 +1,35 @@
 const $ = require('jquery');
 
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+// import Swiper from 'swiper/bundle';
+// import 'swiper/css/bundle';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const reiji = (() => {
+const hogehoge = (() => {
 
 	// 変数宣言
-	const pointPC = window.matchMedia('screen and (max-width: 1128px)');
-	const pointSP = window.matchMedia('screen and (max-width: 767px)');
+	const pointSP = window.matchMedia('(max-width: 767px)');
 
 	// このJSのinit
 	function init() {
 
-		// smoothScroll();
+		smoothScroll();
 		menuTrigger();
 
-		carousel();
+		// telLink();
+
+		// visualFunction();
+		// carousel();
+		// modal();
+
+		// tab();
+
+		// accordion();
 
 		scrollAnimation();
+		scrollDisplay();
 	}
 
 	// 関数 ------------------------------------
@@ -45,6 +53,18 @@ const reiji = (() => {
 		});
 	}
 
+	function scrollDisplay() {
+		gsap.to('.p-visual', {
+			scrollTrigger: {
+				trigger: '.p-visual',
+				start: 'bottom top',
+				endTrigger: 'html',
+				end: 'bottom top',
+				toggleClass: {targets: '.l-header__contact', className: 'is-active'},
+			}
+		});
+	}
+
 	function smoothScroll() {
 		$('a[href^="#"]').on('click.smoothScroll', (event) => {
 			const speed = 1200;// ミリ秒
@@ -59,7 +79,6 @@ const reiji = (() => {
 	function menuTrigger() {
 		const $trigger = $('[aria-controls="l-nav-global"]');
 		const $nav = $('.' + $trigger.attr('aria-controls'));
-		const $anchor = $nav.find('a[href*="#"]');
 
 		$trigger.on('click', () => {
 			const expanded = $trigger.attr('aria-expanded');
@@ -83,28 +102,128 @@ const reiji = (() => {
 			}
 		}
 
-		pointPC.addListener(checkBreakPoint);
-		// checkBreakPoint(pointPC);
+		pointSP.addEventListener('change', checkBreakPoint);
+		// checkBreakPoint(pointSP);
+	}
 
-		$anchor.off('click').on('click', () => {
-			fixedBGReset();
+	function telLink() {
+		const $tel = $('.js-tel');
 
-			$trigger.attr('aria-expanded', false);
-			$nav.attr('aria-hidden', true);
+		$tel.each((index, element) => {
+			const $self = $(element);
+			const str = $self.text();
+
+			$self.attr('href', 'tel:' + str.replace(/-/g, ''));
+		});
+	}
+
+	function visualFunction() {
+		const $visual = $('.visual-main');
+		const $slide = $visual.find('.visual-main__slide').not('.slick-initialized');
+
+		$slide.slick({
+			autoplay: true,
+			autoplaySpeed: 8000,
+			arrows: false,
+			fade: true,
+			pauseOnHover: false,
+			speed: 3000
+		});
+
+		const $item = $visual.find('.slick-slide');
+		$item.eq(0).addClass('-animation');
+
+		$slide.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+			$item.eq(nextSlide).addClass('-animation');
+
+			setTimeout(function() {
+				$item.eq(currentSlide).removeClass('-animation');
+			}, 3000);
 		});
 	}
 
 	function carousel() {
+		const $carousel = $('.js-carousel');
+		if($carousel.length) {
+			$carousel.slick({
+				autoplay: true,
+				autoplaySpeed: 0,
+				arrows: false,
+				cssEase: 'linear',
+				speed: 10000,
+				variableWidth: true
+			});
+		}
+
 		const swiper = new Swiper('.js-carousel', {
-			allowTouchMove: false,
 			autoplay: {
-				delay: 0,
+				delay: 5000,
 			},
 			centeredSlides: true,
-			// lazy: true,
+			lazy: true,
 			loop: true,
 			slidesPerView: 'auto',
-			speed: 24000,
+			spaceBetween: 30,
+		});
+	}
+
+	function modal() {
+		const $trigger = $('[aria-controls*="modal"]');
+		$trigger.off('click.smoothScroll').on('click', (event) => {
+			const $self = $(event.currentTarget);
+			const expanded = $self.attr('aria-expanded');
+			const $target = $('#' + $self.attr('aria-controls'));
+			const $other = $target.find('[aria-controls*="modal"]');
+
+			if (expanded === 'false') {
+				$self.attr('aria-expanded', true).addClass('is-active');
+				$other.attr('aria-expanded', true);
+				$target.attr('aria-hidden', false).addClass('is-active');
+
+				fixedBG();
+			} else {
+				$trigger.attr('aria-expanded', false).removeClass('is-active');
+				$target.attr('aria-hidden', true).removeClass('is-active');
+
+				fixedBGReset();
+			}
+
+			return false;
+		});
+	}
+
+	function tab() {
+		const $trigger = $('[aria-controls*="panel"]');
+		$trigger.off('click.smoothScroll').on('click', (event) => {
+			const $self = $(event.currentTarget);
+			const expanded = $self.attr('aria-expanded');
+			const $target = $('#' + $self.attr('aria-controls'));
+			const $other = $target.find('[aria-controls*="panel"]');
+
+			if (expanded === 'false') {
+				$('[aria-controls*="'+ $self.attr('aria-controls').replace(/[^a-z]/gi, '') +'"]').attr('aria-expanded', false);
+				$trigger.filter('[aria-controls="'+ $self.attr('aria-controls') +'"]').attr('aria-expanded', true);
+				$target.attr('aria-hidden', false).siblings('[id]').attr('aria-hidden', true);
+			}
+
+			return false;
+		});
+	}
+
+	function accordion() {
+		const $trigger = $('[aria-controls*="accordion"]');
+		$trigger.stop().on('click', (event) => {
+			const $self = $(event.currentTarget);
+			const expanded = $self.attr('aria-expanded');
+			const $target = $('#' + $self.attr('aria-controls'));
+
+			if (expanded === 'false') {
+				$self.attr('aria-expanded', true);
+				$target.attr('aria-hidden', false).slideDown();
+			} else {
+				$self.attr('aria-expanded', false);
+				$target.attr('aria-hidden', true).slideUp();
+			}
 		});
 	}
 	// -----------------------------------------
@@ -117,5 +236,5 @@ const reiji = (() => {
 
 // このタイミングで実行
 $(() => {
-	reiji.init();
+	hogehoge.init();
 });

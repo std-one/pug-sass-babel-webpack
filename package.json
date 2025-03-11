@@ -6,39 +6,36 @@
 		"start": "gulp clean && gulp build && gulp"
 	},
 	"devDependencies": {
-		"browser-sync": "^2.26.14",
-		"css-loader": "^2.1.1",
+		"browser-sync": "^2.29.3",
+		"css-loader": "^6.11.0",
 		"del": "^5.1.0",
-		"fibers": "^5.0.0",
-		"gsap": "^3.7.0",
+		"gsap": "^3.12.5",
 		"gulp": "^4.0.2",
-		"gulp-autoprefixer": "^8.0.0",
 		"gulp-changed": "^4.0.2",
 		"gulp-clean-css": "^4.3.0",
 		"gulp-csscomb": "^3.1.0",
-		"gulp-imagemin": "^5.0.3",
+		"gulp-imagemin": "^7.1.0",
 		"gulp-load-plugins": "^1.6.0",
 		"gulp-plumber": "^1.2.1",
 		"gulp-pug": "^4.0.1",
-		"gulp-sass": "^4.1.0",
+		"gulp-sass": "^6.0.1",
 		"gulp-webp": "^4.0.1",
 		"imagemin-mozjpeg": "^8.0.0",
 		"imagemin-pngquant": "^7.0.0",
 		"jquery": "^3.6.0",
-		"sass": "^1.44.0",
-		"slick-carousel": "^1.8.1",
-		"style-loader": "^0.23.1",
-		"swiper": "^7.3.1",
-		"webpack": "^5.64.4",
+		"sass": "^1.85.1",
+		"style-loader": "^3.3.4",
+		"swiper": "^11.1.12",
+		"webpack": "^5.88.2",
 		"webpack-cli": "^4.9.1",
 		"webpack-stream": "^7.0.0"
 	},
 	"browserslist": [
 		"last 1 versions"
 	],
-	"dependencies": {},
 	"volta": {
-		"node": "10.24.1",
-		"npm": "6.14.15"
+		"node": "21.7.2",
+		"npm": "10.5.1",
+		"yarn": "1.22.22"
 	}
 }

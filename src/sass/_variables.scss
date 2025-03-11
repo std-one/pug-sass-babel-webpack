@@ -2,61 +2,51 @@
 // Variables
 //
 
-// width
+:root {
+	/* width - Number */
+	--base-number-view: 1600;
+	--base-number: 1240;
+	--base-number-sp: 375;
+
+	/* width - Base */
+	--base-width-view: calc(var(--base-number-view) * 1px);
+	--base-width: calc(var(--base-number) * 1px);
+	// --base-width-sp: calc(var(--base-number-sp) * 1px);
+
+	/* font */
+	--font-base: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic W3', 'Yu Gothic', YuGothic, Meiryo, system-ui, sans-serif;
+	// --font-maru: 'Hiragino Maru Gothic ProN', sans-serif;
+	// --font-en: 'Roboto', sans-serif;
+
+	/* color */
+	--color-main: #333;
+	--color-sub: #ccc;
+	// --color-sub-light: #ccc;
+	// --color-accent: #ff8383;
+
+	/* link color */
+	--link-color: inherit;
+	--link-color-hover: inherit;
+
+	/* 	ground color */
+	--ground-color: #333;
+	// --ground-color-light: #e3faf8;
+	// --ground-color-gray-light: #f6f6f6;
+	// --ground-color-gray-medium: #eee;
+
+	/* 	text color */
+	--text-color-main: #333;
+	// --text-color-headline: #333;
+
+	/* 	btn color */
+	--btn-color-base: #333;
+
+	/* rollover value */
+	--opacity-value: .7;
+}
+
+// Sass変数定義 - Media Queries
 // -------------------------
-// Number
-$base_number_view: 1366;
-$base_number_wide: 1216;
-$base_number: 1088;
-$base_number_pc: 1024;
-$base_number_sp: 375;
-
-// Base
-$base_width_view: $base_number_view + px;
-$base_width_wide: $base_number_wide + px;
-$base_width: $base_number + px;
-$base_width_pc: $base_number_pc + px;
-
-// Media Queries
-$point_view: $base_width_view;
-$point_pc: $base_width_pc;
-$point_sp: 767px;
-$point_min: 374px;
-
-// height
-// -------------------------
-$header_height_pc: 72px;
-$header_height_sp: 56px;
-
-// font
-// -------------------------
-$font_base: 'Zen Kaku Gothic New', '游ゴシック', 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic W3', 'Hiragino Sans', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, system-ui, sans-serif;
-
-// color
-// -------------------------
-$color_main: #333;
-$color_gray: #dbdcdd;
-$color_accent_blue_light: #f1f4fe;
-$color_accent_blue: #0f99ff;
-$color_accent_blue_dark: #144064;
-$color_accent_yellow: #f6fd47;
-$color_accent_red: #c83956;
-// $color_accent_dark: #333;
-
-// link color
-// -------------------------
-$link_color: $color_accent_blue;
-$link_color_hover: $color_accent_blue;
-
-// ground color
-// -------------------------
-$ground_color: $color_accent_blue_light;
-
-// btn color
-// -------------------------
-$btn_color: $color_accent_blue_dark;
-$btn_color_hover: $color_accent_blue;
-
-// rollover value
-// -------------------------
-$opacity_value: .7;
+$point-view: var(--base-width-view);
+$point-pc: var(--base-width);
+$point-sp: 767px;

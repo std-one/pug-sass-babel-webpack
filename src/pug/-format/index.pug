@@ -6,7 +6,19 @@ block param
 	- var keywords = "町田れいじ,町田零二,大和市,政治,市議会議員";
 	- var pageTitle = "ダミータイトル";
 	- var url = "";
-	- var bodyID = "";
+	- var bodyID = "BodyID";
+
+prepend container
+	.l-breadcrumb
+		.l-wrap
+			ul
+				li: a(href="/") HOME
+				li: a(href="/xxx/xxx/") xxx
+				li #{pageTitle}
 
 block contents
 	h2.c-headline.-primary #{pageTitle}
+
+	picture
+		source(type="image/webp" srcset="/assets/img/common/visual_img@sp.webp" media="(max-width: 767px)" width="" height="")
+		img(src="/assets/img/common/visual_img@pc.webp" alt="" width="" height="" loading="lazy")

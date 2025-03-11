@@ -5,11 +5,7 @@ const $ = require('gulp-load-plugins')({
 	replaceString: /\bgulp[\-.]/
 });
 
-const sass = require('gulp-sass');
-sass.compiler = require('sass'); //Dart Sassを指定
-
-const fibers = require('fibers');
-
+const sass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
 
 const mozjpeg = require('imagemin-mozjpeg');
@@ -46,11 +42,7 @@ gulp.task('sass', () => {
 	return gulp.src(paths.sass)
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sass({
-			fiber: fibers,
 			outputStyle: 'expanded'
-		}))
-		.pipe($.autoprefixer({
-			cascade: false
 		}))
 		.pipe($.csscomb())
 		// .pipe(cleanCSS())

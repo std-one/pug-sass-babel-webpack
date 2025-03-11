@@ -18,13 +18,13 @@
 .u-taC { text-align: center !important;}
 
 /* size */
-.u-txXS { font-size: 10px !important;}
-.u-txSS { font-size: 11px !important;}
-.u-txS { font-size: 12px !important;}
-.u-txM { font-size: 14px !important;}
-.u-txL { font-size: 16px !important;}
-.u-txLL { font-size: 18px !important;}
-.u-txXL { font-size: 20px !important;}
+.u-txXS { font-size: 1rem !important;}
+.u-txSS { font-size: 1.1rem !important;}
+.u-txS { font-size: 1.2rem !important;}
+.u-txM { font-size: 1.4rem !important;}
+.u-txL { font-size: 1.6rem !important;}
+.u-txLL { font-size: 1.8rem !important;}
+.u-txXL { font-size: 2rem !important;}
 
 /* Width */
 @for $i from 3 through 100 {
@@ -62,13 +62,13 @@
 
 /* Display */
 .u-display-pc {
-	@media only screen and (max-width: v.$point_sp) {
+	@media (max-width: v.$point-sp) {
 		display: none;
 	}
 }
 .u-display-sp {
 	display: none;
-	@media only screen and (max-width: v.$point_sp) {
+	@media (max-width: v.$point-sp) {
 		display: block;
 	}
 }
