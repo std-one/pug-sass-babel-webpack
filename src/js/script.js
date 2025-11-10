@@ -1,13 +1,13 @@
 // const $ = require('jquery');
 
-// import Swiper from 'swiper/bundle';
-// import 'swiper/css/bundle';
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const hogehoge = (() => {
+const reiji = (() => {
 
 	// 変数宣言
 	const pointSP = window.matchMedia('(max-width: 767px)');
@@ -16,21 +16,12 @@ const hogehoge = (() => {
 	// このJSのinit
 	function init() {
 
-		smoothScroll();
+		// smoothScroll();
 		menuTrigger();
 
-		// telLink();
-
-		// visualFunction();
-		// carousel();
-		// modal();
-
-		// tab();
-
-		// accordion();
+		carousel();
 
 		scrollAnimation();
-		scrollDisplay();
 	}
 
 	// 関数 ------------------------------------
@@ -123,18 +114,6 @@ const hogehoge = (() => {
 		});
 	}
 
-	function scrollDisplay() {
-		gsap.to('.p-visual', {
-			scrollTrigger: {
-				trigger: '.p-visual',
-				start: 'bottom top',
-				endTrigger: 'html',
-				end: 'bottom top',
-				toggleClass: {targets: '.l-header__contact', className: 'is-active'},
-			}
-		});
-	}
-
 	function smoothScroll() {
 		const links = document.querySelectorAll('a[href^="#"]');
 		links.forEach(link => {
@@ -213,32 +192,8 @@ const hogehoge = (() => {
 			const $self = $(element);
 			const str = $self.text();
 
-			$self.attr('href', 'tel:' + str.replace(/-/g, ''));
-		});
-	}
-
-	function visualFunction() {
-		const $visual = $('.visual-main');
-		const $slide = $visual.find('.visual-main__slide').not('.slick-initialized');
-
-		$slide.slick({
-			autoplay: true,
-			autoplaySpeed: 8000,
-			arrows: false,
-			fade: true,
-			pauseOnHover: false,
-			speed: 3000
-		});
-
-		const $item = $visual.find('.slick-slide');
-		$item.eq(0).addClass('-animation');
-
-		$slide.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-			$item.eq(nextSlide).addClass('-animation');
-
-			setTimeout(function() {
-				$item.eq(currentSlide).removeClass('-animation');
-			}, 3000);
+			$trigger.attr('aria-expanded', false);
+			$nav.attr('aria-hidden', true);
 		});
 	}
 
@@ -353,5 +308,5 @@ const hogehoge = (() => {
 
 // このタイミングで実行
 $(() => {
-	hogehoge.init();
+	reiji.init();
 });
