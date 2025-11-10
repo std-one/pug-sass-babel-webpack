@@ -146,7 +146,20 @@ a {
 	&__logo {
 		position: relative;
 		z-index: 100;
-		line-height: 1;
+		flex-shrink: 0;
+		font-size: 2.4rem;
+		font-weight: 500;
+		line-height: 1.334;
+
+		a {
+			display: block;
+			color: v.$color_main;
+		}
+
+		span {
+			display: block;
+			font-size: 1.2rem;
+		}
 	}
 
 	@media (max-width: v.$point-sp) {
@@ -197,10 +210,21 @@ a {
 			opacity: 0;
 		}
 		&::before {
-			transform: translate(-50%, 10px) rotate(-45deg);
+			// transform: translate(-50%, 4px) rotate(-15deg);
+			transform: translate(-50%, 4px);
 		}
 		&::after {
-			transform: translate(-50%, -10px) rotate(45deg);
+			// transform: translate(-50%, -4px) rotate(15deg);
+			transform: translate(-50%, -4px);
+		}
+
+		span {
+			&:first-child {
+				display: none;
+			}
+			&:last-child {
+				display: inline;
+			}
 		}
 	}
 
