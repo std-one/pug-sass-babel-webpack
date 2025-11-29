@@ -307,6 +307,4 @@ const reiji = (() => {
 })();
 
 // このタイミングで実行
-$(() => {
-	reiji.init();
-});
+document.addEventListener('DOMContentLoaded', hogehoge.init);
